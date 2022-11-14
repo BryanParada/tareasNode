@@ -1,5 +1,5 @@
 import colors from 'colors'; 
-import { guardarDB } from './helpers/guardarArchivo.js';
+import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
 import { inquirerMenu,
          pausa,
          leerInput } from './helpers/inquirer.js';
@@ -15,6 +15,13 @@ const main = async() =>{
     
     let opt = '';
     const tareas = new Tareas();
+
+    const tareasDB = leerDB();
+    if (tareasDB) {
+        //establecer las tareas 
+    } 
+
+    await pausa();
     
     do{
           //imprimir el menu
