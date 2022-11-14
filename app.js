@@ -17,31 +17,31 @@ const main = async() =>{
     const tareas = new Tareas();
 
     const tareasDB = leerDB();
-    if (tareasDB) {
-        //establecer las tareas 
-    } 
 
-    await pausa();
-    
+    if (tareasDB) {   // cargarTareas 
+        tareas.cargarTareasFromArray(tareasDB);
+    }  
+
     do{
           //imprimir el menu
           opt = await inquirerMenu();
-
+        // Se analiza que opcion se tomó del menú
         switch (opt) {
             case '1':
-                // crear opcion
+               // Lee descripcion y la mete en desc
                 const desc = await leerInput('Descripción: ');
-                tareas.crearTarea(desc)
+                // Se ejecuta la funcion crearTarea y se le da el valor de desc.
+                tareas.crearTarea(desc);
                 
             break;
 
             case '2':
-                console.log(tareas.listadoArray);
+                console.log(tareas.listadoArr);
                 break;
                 
         }
 
-         //guardarDB( tareas.listadoArray )
+         guardarDB( tareas.listadoArr )
 
 
 
@@ -53,7 +53,7 @@ const main = async() =>{
  
         await pausa();
 
-    } while(opt !== '0')
+    } while(opt !== '0');
 
  
 }

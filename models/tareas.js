@@ -4,7 +4,7 @@ export class Tareas {
 
     _listado = {};
 
-    get listadoArray(){
+    get listadoArr(){
 
         const listado = [];
 
@@ -19,6 +19,16 @@ export class Tareas {
  
     constructor(){
         this._listado = {};
+    }
+
+    cargarTareasFromArray( tareas = []){
+
+        tareas.forEach(tarea =>{
+            this._listado[tarea.id] = tarea; 
+
+        });
+
+
     }
 
     crearTarea(desc = ''){
