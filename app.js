@@ -11,12 +11,12 @@ console.clear();
 
 
 const main = async() =>{
-    console.log('Hola Mundo');
     
     let opt = '';
     const tareas = new Tareas();
     
     do{
+          //imprimir el menu
           opt = await inquirerMenu();
 
         switch (opt) {
@@ -28,7 +28,7 @@ const main = async() =>{
             break;
 
             case '2':
-                console.log(tareas._listado);
+                console.log(tareas.listadoArray);
                 break;
                 
         }
