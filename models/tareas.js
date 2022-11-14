@@ -39,6 +39,23 @@ export class Tareas {
 
     }
 
+    listadoCompleto(){
+        console.log();
+        
+        this.listadoArr.forEach( (tarea, i) =>{
+            
+            const idx = `${i + 1}`.green
+            const {desc, completadoEn} = tarea;
+            const estado = (completadoEn)
+                            ? 'Completada'.green
+                            : 'Pendiente'.red;
+            console.log(`${idx} ${desc} :: ${estado}`);
+ 
+        });
+
+        
+    }
+
 }
 
  
