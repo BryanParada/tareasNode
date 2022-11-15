@@ -2,7 +2,8 @@ import colors from 'colors';
 import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
 import { inquirerMenu,
          pausa,
-         leerInput } from './helpers/inquirer.js';
+         leerInput, 
+         listadoTareasBorrar} from './helpers/inquirer.js';
 //import { Tarea } from './models/tarea.js';
 import {Tareas} from './models/tareas.js';
  
@@ -46,6 +47,11 @@ const main = async() =>{
 
             case '4':
                 tareas.listarPendientesCompletadas(false); 
+                break;
+
+            case '6':
+                const id = await listadoTareasBorrar( tareas.listadoArr);
+                console.log({id}); 
                 break;
                 
         }
