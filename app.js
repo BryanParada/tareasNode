@@ -53,7 +53,7 @@ const main = async() =>{
 
             case '5':
                   const ids = await mostrarListadoChecklist( tareas.listadoArr );
-
+                  tareas.toggleCompletadas(ids);
              break;
 
             case '6':
