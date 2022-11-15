@@ -51,11 +51,40 @@ export class Tareas {
                             : 'Pendiente'.red;
             console.log(`${idx} ${desc} :: ${estado}`);
  
-        });
-
-        
+        }); 
     }
 
+    listarPendientesCompletadas( completadas = true ) {
+
+        console.log();
+        let contador = 0;
+        this.listadoArr.forEach( tarea => {
+
+            const { desc, completadoEn } = tarea;
+            const estado = ( completadoEn ) 
+                                ? 'Completada'.green
+                                : 'Pendiente'.red;
+            if ( completadas ) {
+                // mostrar completadas
+                if ( completadoEn ) {
+                    contador += 1;
+                    console.log(`${ (contador + '.').green } ${ desc } :: ${ completadoEn.green }`);
+                }
+            } else {
+                // mostrar pendientes
+                if ( !completadoEn ) {
+                    contador += 1;
+                    console.log(`${ (contador + '.').green } ${ desc } :: ${ estado }`);
+                }
+            }
+
+        });     
+
+    }
+
+
+
+    
 }
 
  
