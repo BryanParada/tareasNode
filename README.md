@@ -26,6 +26,7 @@
 * Archivos JSON
 * Async y await
 * Transformaciones
+* Colors
 
 ## Instalación
 
